@@ -4,6 +4,7 @@ Examples for a blog series on [vitaliy.org](https://www.vitaliy.org) about runni
 containers without Docker, going one layer down at a time:
 
 1. containerd without Kubernetes: a manual install, `ctr`, runc, the CNI `bridge` plugin, nerdctl.
+2. Below containerd: an OCI bundle (`rootfs` and `config.json`) and runc's `create`, `start`, `kill`, `delete`.
 
 Each folder holds the examples of one part. Everything here has been run on the lab described
 below before it was committed.
