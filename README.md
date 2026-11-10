@@ -7,6 +7,7 @@ containers without Docker, going one layer down at a time:
 2. Below containerd: an OCI bundle (`rootfs` and `config.json`) and runc's `create`, `start`, `kill`, `delete`.
 3. Without runc: namespaces with `unshare` and `nsenter`, the root with `pivot_root`, `/proc`, `/sys` and `/dev` by hand.
 4. Layers: an OCI image on disk, its layers unpacked and mounted with overlayfs, whiteouts.
+5. Resources: a cgroup v2 group by hand, limits on memory, CPU, processes and disk writes.
 
 Each folder holds the examples of one part. Everything here has been run on the lab described
 below before it was committed.
