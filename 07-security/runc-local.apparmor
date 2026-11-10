@@ -1,0 +1,16 @@
+# The profile Ubuntu ships for its own runc package (/etc/apparmor.d/runc),
+# for runc installed by hand into /usr/local/sbin. It only allows the program
+# to create user namespaces, which Ubuntu 24.04 and later deny by default to
+# unprivileged programs (kernel.apparmor_restrict_unprivileged_userns = 1).
+abi <abi/5.0>,
+
+include <tunables/global>
+
+profile runc-local /usr/local/sbin/runc flags=(unconfined) {
+  userns,
+
+  @{exec_path} mr,
+
+  # Site-specific additions and overrides. See local/README for details.
+  include if exists <local/runc-local>
+}

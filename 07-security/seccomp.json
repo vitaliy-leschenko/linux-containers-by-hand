@@ -1,0 +1,25 @@
+{
+    "defaultAction": "SCMP_ACT_ALLOW",
+    "architectures": [
+        "SCMP_ARCH_X86_64"
+    ],
+    "syscalls": [
+        {
+            "names": [
+                "mkdir",
+                "mkdirat"
+            ],
+            "action": "SCMP_ACT_ERRNO",
+            "errnoRet": 1
+        },
+        {
+            "names": [
+                "chmod",
+                "fchmod",
+                "fchmodat",
+                "fchmodat2"
+            ],
+            "action": "SCMP_ACT_KILL_PROCESS"
+        }
+    ]
+}

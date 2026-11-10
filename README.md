@@ -9,6 +9,7 @@ containers without Docker, going one layer down at a time:
 4. Layers: an OCI image on disk, its layers unpacked and mounted with overlayfs, whiteouts.
 5. Resources: a cgroup v2 group by hand, limits on memory, CPU, processes and disk writes.
 6. Network: a veth pair, a bridge, forwarding, NAT and a published port, the way the CNI `bridge` plugin does it.
+7. Security: capabilities, a seccomp filter, user namespaces and runc without root.
 
 Each folder holds the examples of one part. Everything here has been run on the lab described
 below before it was committed.
